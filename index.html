@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Import Vega & Vega-Lite -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <!-- Done importing Vega & Vega-Lite -->
+        <!-- Import fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap"
             rel="stylesheet"
         />
+        <!-- Done importing fonts -->
+        <!-- Importing stylesheets -->
         <link rel="stylesheet" href="style/style.css" />
+        <!-- Done importing stylesheets -->
+        <script defer src="js/main.js"></script>
         <title>Assignment 2 Dashboard</title>
     </head>
     <body>
@@ -27,8 +37,12 @@
                     Use the drop down to select the a factor eg. Housing or Cost
                     of living. Then click on Load.
                 </p>
+                <!-- visualization goes here!!! -->
+                <div class="inner-grid-container">
+                    <div class="grid-item" id="embed_bar_chart"></div>
+                </div>
                 <div>
-                    <select class="inline">
+                    <select id="bar_chart_selector" class="inline">
                         <option class="selectable-item" value="0">
                             Select factor:
                         </option>
@@ -96,7 +110,7 @@
                             Outdoors
                         </option>
                     </select>
-                    <a class="styled-button unselectable inline"
+                    <a id="load-viz" class="styled-button unselectable inline"
                         >Load Visualization</a
                     >
                 </div>
