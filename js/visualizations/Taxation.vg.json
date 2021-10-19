@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "config": {
+        "background": "#f1f1f1"
+    },
+    "title": "Taxation In Australian States (Northern Territory not included)",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/australia-quality-of-life.csv"
+    },
+    "layer": [
+        {
+            "mark": { "type": "bar", "width": { "band": 0.9 } },
+            "encoding": {
+                "y": {
+                    "field": "Taxation",
+                    "type": "quantitative",
+                    "sort": "x",
+                    "title": "Taxation"
+                },
+                "x": {
+                    "field": "Rank",
+                    "type": "nominal",
+                    "title": "Overall Rank"
+                },
+                "color": {
+                    "field": "State",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "State",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Taxation",
+                        "type": "quantitative",
+                        "title": "Taxation ranking out of 10",
+                        "format": ".2f"
+                    }
+                ]
+            }
+        }
+    ]
+}
