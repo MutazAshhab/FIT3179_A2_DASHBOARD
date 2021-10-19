@@ -49,11 +49,13 @@ a.styled-button {
     border-radius: 0.12em;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 300;
+    font-size: 20px;
     color: #24292e;
     text-align: center;
     transition: all 0.2s;
+    height: 50px;
 }
 
 a.styled-button:hover {
@@ -71,4 +73,41 @@ a.styled-button:active {
         display: block;
         margin: 0.4em auto;
     }
+}
+
+select {
+    width: auto;
+    height: 50px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 20px;
+    background-color: inherit;
+    border: 0.1em solid #24292e;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    padding: 0.35em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+}
+
+select:hover {
+    color: #ffffff;
+    background-color: #24292e;
+    cursor: pointer;
+}
+
+select:active {
+    background-color: #5f6d7a;
+}
+
+.selectable-item {
+    background-color: #24292e;
+    color: #ffffff;
+}
+
+.unselectable {
+    user-select: none;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: middle;
 }
