@@ -1,0 +1,74 @@
+body {
+    background-color: #f1f1f1;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    font-size: 25px;
+    padding: 20px;
+    color: #222;
+}
+
+.header {
+    display: inherit;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.sub-header {
+    display: inherit;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.my_colors {
+    background-color: #fc7d0b;
+    color: #1170aa;
+}
+
+hr {
+    border-width: 5px;
+}
+
+.sub-section-text {
+    font-size: 20px;
+}
+
+a.styled-button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #24292e;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #24292e;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+a.styled-button:hover {
+    color: #ffffff;
+    background-color: #24292e;
+    cursor: pointer;
+}
+
+a.styled-button:active {
+    background-color: #5f6d7a;
+}
+
+@media all and (max-width: 30em) {
+     a.styled-button {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
