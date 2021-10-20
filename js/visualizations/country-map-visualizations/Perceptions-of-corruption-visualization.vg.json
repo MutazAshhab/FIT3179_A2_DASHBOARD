@@ -1,0 +1,101 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Perceptions of corruption (2015 — 2019)",
+    "width": 800,
+    "height": 500,
+    "config": {
+        "background": "#f1f1f1"
+    },
+    "params": [
+        {
+            "name": "Year_selection",
+            "value": 2015,
+            "bind": {
+                "input": "range",
+                "min": 2015,
+                "max": 2019,
+                "step": 1,
+                "name": "Year:  "
+            }
+        }
+    ],
+    "projection": {
+        "type": "equirectangular"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/topojson/continents.topojson.json",
+
+                "format": {
+                    "type": "topojson",
+                    "feature": "custom-all areas-.geo"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "'Data is not available in ' + datum.properties.name",
+                    "as": "note"
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "fill": "#bebaba",
+                "stroke": "white",
+                "strokeWidth": 1
+            },
+            "encoding": { "tooltip": { "field": "note" } }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/happiness_report/wide_form/Perceptions-of-corruption.csv"
+            },
+            "transform": [
+                {
+                    "lookup": "Country_or_region",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/topojson/continents.topojson.json",
+
+                            "format": {
+                                "type": "topojson",
+                                "feature": "custom-all areas-.geo"
+                            }
+                        },
+                        "key": "properties.name"
+                    },
+                    "as": "geo"
+                },
+                { "calculate": "datum[Year_selection]", "as": "year_value" }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "stroke": "#fff",
+                "strokeWidth": 0.5
+            },
+            "encoding": {
+                "shape": { "field": "geo", "type": "geojson" },
+                "color": {
+                    "field": "year_value",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "oranges"
+                    },
+                    "title": "Perceptions of corruption"
+                },
+                "tooltip": [
+                    {
+                        "field": "Country_or_region",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "year_value",
+                        "type": "quantitative",
+                        "title": "Perceptions of corruption"
+                    }
+                ]
+            }
+        }
+    ]
+}
