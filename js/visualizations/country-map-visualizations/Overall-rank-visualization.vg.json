@@ -79,6 +79,7 @@
                     "field": "year_value",
                     "type": "quantitative",
                     "scale": {
+                        "domain": [0, 150],
                         "scheme": "oranges",
                         "reverse": true
                     },

@@ -79,6 +79,7 @@
                     "field": "year_value",
                     "type": "quantitative",
                     "scale": {
+                        "domain": [0, 2],
                         "scheme": "oranges"
                     },
                     "title": "GDP per capita"

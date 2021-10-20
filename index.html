@@ -24,6 +24,7 @@
         <div class="grid-container">
             <div class="grid-item">LEFT SIDEBAR</div>
             <div class="grid-item">
+                <!-- HEADER SECTION -->
                 <header class="header">Happiness across the world</header>
                 <p>
                     I became interested in happiness 😊 after living through
@@ -32,7 +33,10 @@
                     of certain cities, countries, and continents.
                 </p>
                 <hr />
-                <header class="sub-header">Happiness in Australia</header>
+                <!-- FIRST VISUALIZATION SECTION GOES HERE -->
+                <header class="sub-header">
+                    Happiness in the Australian states
+                </header>
                 <p class="sub-section-text">
                     Use the drop down to select the a factor eg. Housing or Cost
                     of living. Then click on Load.
@@ -41,13 +45,13 @@
                 <div class="inner-grid-container">
                     <div class="grid-item" id="embed_bar_chart"></div>
                     <div>
-                        <p>
+                        <p class="sub-section-text">
                             As you go through the visualizations, it will become
                             noticable that there are factors that have the same
                             value accross the differnet states. This could
                             indicate a shared charactersitic across the country.
                         </p>
-                        <p>
+                        <p class="sub-section-text">
                             Also, there are factors that do not correlate to
                             better happiness ranking. Checkout Lesuire & Culture
                         </p>
@@ -122,7 +126,48 @@
                             Outdoors
                         </option>
                     </select>
-                    <a id="load-viz" class="styled-button unselectable inline"
+                    <a
+                        id="load-bar-viz"
+                        class="styled-button unselectable inline"
+                        >Load Visualization</a
+                    >
+                </div>
+                <hr />
+                <!-- SECOND VISUALIZATION SECTION GOES HERE -->
+                <header class="sub-header">SECOND HEADER</header>
+                <p class="sub-section-text">SUBSECTION TEXT GOES HERE</p>
+                <!-- visualization goes here!!! -->
+                <div style="width: 100%" id="embed_country_choropleth"></div>
+                <div>
+                    <select id="choropleth_selector" class="inline">
+                        <option
+                            value="Freedom-to-make-life-choices-visualization"
+                        >
+                            Freedom to make life choices
+                        </option>
+                        <option value="GDP-per-capita-visualization">
+                            GDP per capita
+                        </option>
+                        <option value="Generosity-visualization">
+                            Generosity
+                        </option>
+                        <option value="Healthy-life-expectancy-visualization">
+                            Healthy life expectancy
+                        </option>
+                        <option value="Overall-rank-visualization">
+                            Overall rank
+                        </option>
+                        <option value="Perceptions-of-corruption-visualization">
+                            Perceptions of corruption
+                        </option>
+                        <option value="Score-visualization">Score</option>
+                        <option value="Social-support-visualization">
+                            Social support
+                        </option>
+                    </select>
+                    <a
+                        id="load-choro-countries"
+                        class="styled-button unselectable inline"
                         >Load Visualization</a
                     >
                 </div>
