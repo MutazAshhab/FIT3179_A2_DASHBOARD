@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Venture Capital Around the World",
-    "width": 500,
-    "height": 400,
+    "width": 800,
+    "height": 500,
     "config": {
         "background": "#f1f1f1"
     },
