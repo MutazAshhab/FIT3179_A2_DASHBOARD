@@ -135,10 +135,12 @@
                 <hr />
                 <!-- SECOND VISUALIZATION SECTION GOES HERE -->
                 <header class="sub-header">
-                    Scores for differnet countries
+                    Scores for differnet countries over time
                 </header>
                 <p class="sub-section-text">
-                    Survey participants where asked to give a score
+                    Survey participants where asked to score their country based
+                    on different factors. The final values for each factor was
+                    normalized and calculated to fit within a range.
                 </p>
                 <!-- visualization goes here!!! -->
                 <div style="width: 100%" id="embed_country_choropleth"></div>
@@ -176,11 +178,152 @@
                         >Load Visualization</a
                     >
                 </div>
+                <p class="sub-section-text">
+                    After selecting and viewing the map you will see how
+                    different factors changed in certain geographical locations.
+                    For example, Saudi Arabia's overall rank went down (positive
+                    change) over time. Additionally, another change in Saudi
+                    Arabia's rankings was a decrease in the perceptions of
+                    corruption
+                </p>
                 <hr />
                 <!-- THIRD VISUALIZATION SECTION GOES HERE -->
-                <header class="sub-header">THIRD HEADER</header>
+                <header class="sub-header">Scores for continents</header>
                 <p class="sub-section-text">SUBSECTION TEXT GOES HERE</p>
                 <!-- visualization goes here!!! -->
+                <div class="inner-grid-container">
+                    <div
+                        class="grid-item"
+                        id="embed_continent_choropleth"
+                    ></div>
+                    <div>
+                        <p class="sub-section-text">
+                            As you go through the visualizations, it will become
+                            noticable that there are factors that have the same
+                            value accross the differnet states. This could
+                            indicate a shared charactersitic across the country.
+                        </p>
+                        <p class="sub-section-text">
+                            Also, there are factors that do not correlate to
+                            better happiness ranking. Checkout Lesuire & Culture
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <select id="continent_selector" class="inline">
+                        <option class="selectable-item" value="0">
+                            Select factor:
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Business-Freedom-visualization"
+                        >
+                            Business Freedom visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Commute-visualization"
+                        >
+                            Commute visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Cost-of-Living-visualization"
+                        >
+                            Cost of Living visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Economy-visualization"
+                        >
+                            Economy visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Education-visualization"
+                        >
+                            Education visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Environmental-Quality-visualization"
+                        >
+                            Environmental Quality visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Healthcare-visualization"
+                        >
+                            Healthcare visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Housing-visualization"
+                        >
+                            Housing visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Internet-Access-visualization"
+                        >
+                            Internet Access visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Leisure-&-Culture-visualization"
+                        >
+                            Leisure & Culture visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Outdoors-visualization"
+                        >
+                            Outdoors visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Safety-visualization"
+                        >
+                            Safety visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Startups-visualization"
+                        >
+                            Startups visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Taxation-visualization"
+                        >
+                            Taxation visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Tolerance-visualization"
+                        >
+                            Tolerance visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Travel-Connectivity-visualization"
+                        >
+                            Travel Connectivity visualization
+                        </option>
+                        <option
+                            class="selectable-item"
+                            value="Venture-Capital-visualization"
+                        >
+                            Venture Capital visualization
+                        </option>
+                    </select>
+                    <a
+                        id="load-choro-continents"
+                        class="styled-button unselectable inline"
+                        >Load Visualization</a
+                    >
+                </div>
+                <hr />
             </div>
             <div class="grid-item"></div>
         </div>
