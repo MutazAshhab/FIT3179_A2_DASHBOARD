@@ -1,69 +1,68 @@
-
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Startups Around the World",
+    "width": 500,
+    "height": 400,
+    "config": {
+        "background": "#f1f1f1"
+    },
+    "projection": { "type": "equirectangular" },
+    "data": {
+        "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/topojson/continents.topojson.json",
+        "format": {
+            "type": "topojson",
+            "feature": "custom-all areas-.geo"
+        }
+    },
+    "transform": [
         {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "width": 500,
-            "height": 400,
-            "config": {
-                "background": "#f1f1f1"
-            },
-            "projection": { "type": "equirectangular" },
-            "data": {
-                "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/topojson/continents.topojson.json",
-                "format": {
-                    "type": "topojson",
-                    "feature": "custom-all areas-.geo"
-                }
-            },
-            "transform": [
-                {
-                    "lookup": "properties.continent",
-                    "from": {
-                        "data": {
-                            "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/quality-of-life-by-continent.csv"
-                        },
-                        "key": "Continent",
-                        "fields": [
-                            "Housing",
-                            "Cost_of_Living",
-                            "Startups",
-                            "Venture_Capital",
-                            "Travel_Connectivity",
-                            "Commute",
-                            "Business_Freedom",
-                            "Safety",
-                            "Healthcare",
-                            "Education",
-                            "Environmental_Quality",
-                            "Economy",
-                            "Taxation",
-                            "Internet_Access",
-                            "Leisure_&_Culture",
-                            "Tolerance",
-                            "Outdoors"
-                        ]
-                    }
+            "lookup": "properties.continent",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/Taz17/FIT3179_repo/master/assignment2_data/quality-of-life-by-continent.csv"
                 },
-                { "calculate": "datum.Startups + 1", "as": "Startups" }
-            ],
-            "mark": { "type": "geoshape" },
-            "encoding": {
-                "color": {
-                    "field": "Startups",
-                    "type": "quantitative",
-                    "scale": {
-                        "type": "linear",
-                        "domain": [0, 10],
-                        "scheme": "oranges"
-                    }
-                },
-                "tooltip": [
-                    {
-                        "field": "properties.continent",
-                        "type": "nominal",
-                        "title": "Continent"
-                    },
-                    { "field": "Startups", "type": "quantitative", "title": "Startups" }
+                "key": "Continent",
+                "fields": [
+                    "Housing",
+                    "Cost_of_Living",
+                    "Startups",
+                    "Venture_Capital",
+                    "Travel_Connectivity",
+                    "Commute",
+                    "Business_Freedom",
+                    "Safety",
+                    "Healthcare",
+                    "Education",
+                    "Environmental_Quality",
+                    "Economy",
+                    "Taxation",
+                    "Internet_Access",
+                    "Leisure_&_Culture",
+                    "Tolerance",
+                    "Outdoors"
                 ]
             }
-        }
-        
+        },
+        { "calculate": "datum.Startups + 1", "as": "Startups" }
+    ],
+    "mark": { "type": "geoshape" },
+    "encoding": {
+        "color": {
+            "field": "Startups",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear",
+                "domain": [0, 10],
+                "scheme": "oranges"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "properties.continent",
+                "type": "nominal",
+                "title": "Continent"
+            },
+            { "field": "Startups", "type": "quantitative", "title": "Startups" }
+        ]
+    }
+}
