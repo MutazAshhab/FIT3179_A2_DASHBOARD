@@ -9,6 +9,12 @@ vegaEmbed('#embed_country_choropleth', viz)
     .then(function (result) {})
     .catch(console.error);
 
+var viz =
+    'js/visualizations/continent-map-visualizations/Business-Freedom-visualization.vg.json';
+vegaEmbed('#embed_continent_choropleth', viz)
+    .then(function (result) {})
+    .catch(console.error);
+
 load_bar_button = document.getElementById('load-bar-viz');
 bar_chart_select = document.getElementById('bar_chart_selector');
 
@@ -37,6 +43,22 @@ load_country_choro.addEventListener('click', () => {
     const viz_selected = `js/visualizations/country-map-visualizations/${filename}.vg.json`;
 
     vegaEmbed('#embed_country_choropleth', viz_selected)
+        .then(function (result) {})
+        .catch(console.error);
+});
+
+load_continent_choro = document.getElementById('load-choro-countries');
+choropleth_select_continent = document.getElementById('choropleth_selector');
+
+load_continent_choro.addEventListener('click', () => {
+    const filename =
+        choropleth_select_continent.options[
+            choropleth_select_continent.selectedIndex
+        ].value;
+
+    const viz_selected = `js/visualizations/continent-map-visualizations/${filename}.vg.json`;
+
+    vegaEmbed('#embed_continent_choropleth', viz_selected)
         .then(function (result) {})
         .catch(console.error);
 });
